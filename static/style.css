@@ -1,33 +1,44 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
     text-align: center;
     padding: 40px;
 }
 
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
 h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    margin-bottom: 25px;
 }
 
 textarea {
-    width: 60%;
-    height: 150px;
-    padding: 10px;
-    border-radius: 10px;
+    width: 80%;
+    height: 220px;
+    padding: 15px;
+    border-radius: 12px;
     border: none;
     font-size: 16px;
+    resize: vertical;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #3b82f6;
     color: white;
-    font-size: 16px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -38,10 +49,27 @@ button:hover {
 .card {
     margin: 20px auto;
     padding: 20px;
-    width: 60%;
-    border-radius: 12px;
+    width: 75%;
+    border-radius: 14px;
+    text-align: left;
 }
 
-.HIGH { background: #dc2626; }
-.MEDIUM { background: #f59e0b; }
-.LOW { background: #16a34a; }
+.HIGH {
+    background: #dc2626;
+}
+
+.MEDIUM {
+    background: #f59e0b;
+}
+
+.LOW {
+    background: #16a34a;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: bold;
+}
