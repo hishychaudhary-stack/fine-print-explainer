@@ -2,21 +2,54 @@
 <html>
 <head>
     <title>Analysis Results</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Analysis Results</h1>
+    <nav class="nav">
+        <div class="logo">FinePrint<span>AI</span></div>
+        <a class="nav-link" href="/">New Scan</a>
+    </nav>
 
-        {% for title, desc, risk in results %}
-            <div class="card {{ risk }}">
-                <h3>{{ title }}</h3>
-                <p>{{ desc }}</p>
-                <strong>Risk: {{ risk }}</strong>
-            </div>
-        {% endfor %}
+    <main class="results-layout">
+        <section class="score-panel">
+            <p class="label">Overall Result</p>
+            <h1>{{ risk_level }}</h1>
+            <div class="score-circle">{{ score }}</div>
+            <p class="small-text">
+                Score is based on the number and severity of risky clauses detected.
+            </p>
+        </section>
 
-        <a class="back-link" href="/">Analyze Another Policy</a>
-    </div>
+        <section class="results-panel">
+            <h2>Detected Clauses</h2>
+
+            {% for item in results %}
+                <div class="result-card {{ item.risk }}">
+                    <div class="card-top">
+                        <h3>{{ item.title }}</h3>
+                        <span>{{ item.risk }}</span>
+                    </div>
+
+                    <p><strong>Plain English:</strong> {{ item.plain }}</p>
+                    <p><strong>Why it matters:</strong> {{ item.why }}</p>
+
+                    {% if item.keywords %}
+                        <p><strong>Matched keywords:</strong> {{ item.keywords | join(", ") }}</p>
+                    {% endif %}
+
+                    {% if item.evidence %}
+                        <div class="evidence">
+                            <strong>Evidence found:</strong>
+                            {% for quote in item.evidence %}
+                                <blockquote>{{ quote }}</blockquote>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <a class="back-button" href="/">Analyze Another Policy</a>
+        </section>
+    </main>
 </body>
 </html>
