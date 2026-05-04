@@ -2,18 +2,50 @@
 <html>
 <head>
     <title>Explain the Fine Print</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Explain the Fine Print</h1>
-        <p class="subtitle">Paste a policy, agreement, or terms of service below.</p>
+    <nav class="nav">
+        <div class="logo">FinePrint<span>AI</span></div>
+        <div class="nav-pill">Software Engineering Project</div>
+    </nav>
 
-        <form method="POST">
-            <textarea name="policy" placeholder="Paste policy here..." required></textarea>
-            <br>
-            <button type="submit">Analyze</button>
-        </form>
-    </div>
+    <main class="hero">
+        <section class="hero-text">
+            <h1>Understand the fine print before you click accept.</h1>
+            <p>
+                Paste a Terms of Service, Privacy Policy, or agreement. This tool breaks it into plain English,
+                highlights risky clauses, and gives you an overall risk score.
+            </p>
+
+            <div class="feature-row">
+                <div class="feature-card">Risk Detection</div>
+                <div class="feature-card">Plain English</div>
+                <div class="feature-card">Evidence Quotes</div>
+            </div>
+        </section>
+
+        <section class="analyzer-card">
+            <h2>Paste Policy Text</h2>
+            <p class="small-text">Try words like data, third party, subscription, arbitration, cookies, refund, or liability.</p>
+
+            <form method="POST">
+                <textarea name="policy" placeholder="Paste policy here..." required></textarea>
+                <button type="submit">Analyze Policy</button>
+            </form>
+        </section>
+    </main>
+
+    <section class="example">
+        <h2>What this website checks for</h2>
+        <div class="grid">
+            <div>Personal data collection</div>
+            <div>Third-party sharing</div>
+            <div>Auto-renewal subscriptions</div>
+            <div>Arbitration clauses</div>
+            <div>Cookies and tracking</div>
+            <div>No-refund language</div>
+        </div>
+    </section>
 </body>
 </html>
