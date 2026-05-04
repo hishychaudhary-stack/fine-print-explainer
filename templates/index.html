@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Explain the Fine Print</h1>
+    <div class="container">
+        <h1>Explain the Fine Print</h1>
+        <p class="subtitle">Paste a policy, agreement, or terms of service below.</p>
 
-    <form method="POST">
-        <textarea name="policy" placeholder="Paste policy here..." required></textarea>
-        <br><br>
-        <button type="submit">Analyze</button>
-    </form>
-
+        <form method="POST">
+            <textarea name="policy" placeholder="Paste policy here..." required></textarea>
+            <br>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
 </body>
 </html>
