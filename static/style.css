@@ -1,21 +1,47 @@
 body {
     font-family: Arial;
-    text-align: center;
-    background: #111;
+    background: #0f172a;
     color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 textarea {
-    width: 80%;
-    height: 200px;
+    width: 60%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
 }
 
 .card {
-    margin: 15px;
-    padding: 15px;
-    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 12px;
 }
 
-.HIGH { background: #ff4d4d; }
-.MEDIUM { background: #ffaa00; }
-.LOW { background: #2ecc71; }
+.HIGH { background: #dc2626; }
+.MEDIUM { background: #f59e0b; }
+.LOW { background: #16a34a; }
